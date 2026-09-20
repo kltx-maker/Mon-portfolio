@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@plugin "flowbite/plugin";
+
+@source "../node_modules/flowbite";
+
+.section {
+  display: flex;
+  position: relative; /* important */
+}
+
+.col-left {
+  flex: 1;
+  /* la hauteur de .section dépend de ce contenu */
+}
+
+.col-right {
+  flex: 1;
+  position: sticky;
+  top: 0;
+  height: 100vh; /* ou height du viewport visible */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start; /* nécessaire pour que sticky fonctionne dans un flex */
+}
