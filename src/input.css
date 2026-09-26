@@ -50,6 +50,16 @@
 /* Variante 3 : vient de la droite */
 .reveal-right { transform: translateX(40px); }
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+header.scrolled {
+  background-color: rgba(250, 243, 224, 0.7); /* ta couleur #FAF3E0 en semi-transparent */
+  backdrop-filter: blur(8px);
+}
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
   50%      { transform: scale(1.4); }

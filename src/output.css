@@ -2391,6 +2391,16 @@
 .reveal-right {
   transform: translateX(40px);
 }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+header.scrolled {
+  background-color: rgba(250, 243, 224, 0.7);
+  backdrop-filter: blur(8px);
+}
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);
