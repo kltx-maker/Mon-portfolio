@@ -24,3 +24,33 @@
   justify-content: center;
   align-self: flex-start; /* nécessaire pour que sticky fonctionne dans un flex */
 }
+
+.pulse {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* Comportement de base : caché, puis transition douce */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translate(0, 0) !important;
+}
+
+/* Variante 1 : vient du bas */
+.reveal-up { transform: translateY(30px); }
+
+/* Variante 2 : vient de la gauche */
+.reveal-left { transform: translateX(-40px); }
+
+/* Variante 3 : vient de la droite */
+.reveal-right { transform: translateX(40px); }
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.4); }
+}
