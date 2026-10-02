@@ -7,14 +7,53 @@
     <title>CV</title>
   </head>
   <body class="bg-[#FAF3E0] text-[#2D2D2D]">
-     <header class="border-b bg-[#FAF3E0] border-[#2D2D2D]">
-      <nav class="flex flex-2 flex-row p-10">
-                <a href="/index.html">
-          <h1 class="text-xl font-bold text-[#D4A373]">
+    <header class="relative z-50 border-b bg-[#FAF3E0] border-[#2D2D2D]">
+      <nav
+        class="relative flex flex-row items-center justify-between p-5 md:flex-2 md:items-start md:p-10"
+      >
+        <a href="/index.html" class="relative z-50">
+          <h1 class="text-sm sm:text-base md:text-xl font-bold text-[#D4A373]">
             KOFFI KOUAME KARL EMERY
           </h1></a
         >
-        <ul class="flex flex-4 flex-row justify-end font-medium gap-6">
+
+        <!-- bouton hamburger (mobile uniquement) -->
+        <button
+          id="menu-btn"
+          type="button"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          class="relative z-50 md:hidden p-2 text-[#D4A373] cursor-pointer"
+        >
+          <svg
+            id="icon-open"
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            viewBox="0 0 24 24"
+          >
+            <path d="M4 7h10M4 12h16M4 17h10" />
+          </svg>
+          <svg
+            id="icon-close"
+            class="w-7 h-7 hidden"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            viewBox="0 0 24 24"
+          >
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+
+        <!-- menu desktop (identique au code d'origine) -->
+        <ul
+          class="hidden md:flex md:flex-row md:flex-4 md:justify-end md:gap-6 font-medium"
+        >
           <li class="hover:text-[#D4A373] duration-300">
             <a href="/index.html">À propos de moi</a>
           </li>
@@ -30,22 +69,73 @@
         </ul>
       </nav>
     </header>
+
+    <!-- MENU MOBILE plein écran (en dehors du header pour couvrir tout l'écran) -->
+    <ul
+      id="mobile-menu"
+      class="md:hidden fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-[#FAF3E0] text-2xl font-medium opacity-0 invisible -translate-y-4 transition-all duration-500 ease-out"
+    >
+      <li class="hover:text-[#D4A373] duration-300">
+        <a href="/index.html">À propos de moi</a>
+      </li>
+      <li class="hover:text-[#D4A373] duration-300 underline">
+        <a href="/cv.html">CV</a>
+      </li>
+      <li class="hover:text-[#D4A373] duration-300">
+        <a href="/projets.html">Projets</a>
+      </li>
+      <li class="hover:text-[#D4A373] duration-300">
+        <a href="/contact.html">Contact</a>
+      </li>
+    </ul>
+
     <!-- SECTION FORMATION : gauche défile, "Formation" reste fixe à droite -->
-    <section class="relative reveal reveal-up">
+    <section
+      class="relative overflow-x-clip md:overflow-x-visible reveal reveal-up"
+    >
       <div class="grid md:grid-cols-2 gap-5">
         <!-- COLONNE CV : défile -->
-        <div style="animation-delay: 0.6s;" class="pb-2 reveal reveal-left">
-          <h2 class="p-10 text-6xl font-bold">CV</h2>
-           <div style="animation: delay 20s;" class="relative text-[#1B4332] ml-[92vh] reveal reveal-left "> <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
- <path class="pulse" d="M 100 10 A 90 90 0 0 0 100 190 Z" fill="currentColor" opacity="0.08"/>
-<path class="pulse" d="M 100 40 A 60 60 0 0 0 100 160 Z" fill="currentColor" opacity="0.12" style="animation-delay: 0.4s"/>
-<path class="pulse" d="M 100 70 A 30 30 0 0 0 100 130 Z" fill="currentColor" opacity="0.18" style="animation-delay: 0.8s"/>
-</svg></div>
-          <div class="flex px-10 pt-24 gap-16 items-center mt-32">
-            <div style="animation-delay: 11s;" class="reveal reveal-up">
+        <div style="animation-delay: 0.6s" class="pb-2 reveal reveal-left">
+          <h2 class="p-6 md:p-10 text-5xl md:text-6xl font-bold">CV</h2>
+          <div
+            style="animation: delay 20s"
+            class="hidden md:block relative text-[#1B4332] ml-[92vh] reveal reveal-left"
+          >
+            <svg
+              width="200"
+              height="200"
+              viewBox="0 0 200 200"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="pulse"
+                d="M 100 10 A 90 90 0 0 0 100 190 Z"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <path
+                class="pulse"
+                d="M 100 40 A 60 60 0 0 0 100 160 Z"
+                fill="currentColor"
+                opacity="0.12"
+                style="animation-delay: 0.4s"
+              />
+              <path
+                class="pulse"
+                d="M 100 70 A 30 30 0 0 0 100 130 Z"
+                fill="currentColor"
+                opacity="0.18"
+                style="animation-delay: 0.8s"
+              />
+            </svg>
+          </div>
+          <div
+            class="flex flex-col items-start gap-2 px-6 mt-8 md:flex-row md:items-center md:gap-16 md:px-10 md:pt-24 md:mt-32"
+          >
+            <div style="animation-delay: 11s" class="reveal reveal-up">
               <h3 class="whitespace-nowrap font-light">2024-En cours</h3>
             </div>
-            <div style="animation-delay: 13s;" class="reveal reveal-up">
+            <div style="animation-delay: 13s" class="reveal reveal-up">
               <h3 class="font-bold text-2xl">
                 Licence
                 <p class="font-bold text-xl">
@@ -57,11 +147,13 @@
               </h3>
             </div>
           </div>
-          <div class="flex px-10 gap-20 items-center mt-32">
-            <div style="animation-delay: 11s;" class="reveal reveal-up">
+          <div
+            class="flex flex-col items-start gap-2 px-6 mt-12 md:flex-row md:items-center md:gap-20 md:px-10 md:mt-32"
+          >
+            <div style="animation-delay: 11s" class="reveal reveal-up">
               <h3 class="whitespace-nowrap font-light">2023-2024</h3>
             </div>
-            <div style="animation-delay: 13s;" class="reveal reveal-up">
+            <div style="animation-delay: 13s" class="reveal reveal-up">
               <h3 class="font-bold text-2xl">
                 BAC C
                 <p class="font-light text-xl uppercase">
@@ -70,11 +162,13 @@
               </h3>
             </div>
           </div>
-          <div class="flex px-10 gap-20 items-center mt-32">
-            <div style="animation-delay: 11s;" class="reveal reveal-up">
+          <div
+            class="flex flex-col items-start gap-2 px-6 mt-12 md:flex-row md:items-center md:gap-20 md:px-10 md:mt-32"
+          >
+            <div style="animation-delay: 11s" class="reveal reveal-up">
               <h3 class="whitespace-nowrap font-light">2020-2021</h3>
             </div>
-            <div style="animation-delay: 13s;" class="reveal reveal-up">
+            <div style="animation-delay: 13s" class="reveal reveal-up">
               <h3 class="font-bold text-2xl">
                 BEPC
                 <p class="font-light uppercase">
@@ -83,11 +177,13 @@
               </h3>
             </div>
           </div>
-          <div class="flex p-10 gap-20 items-center mt-32">
-            <div style="animation-delay: 11s;" class="reveal reveal-up">
+          <div
+            class="flex flex-col items-start gap-2 px-6 py-6 mt-12 md:flex-row md:items-center md:gap-20 md:p-10 md:mt-32"
+          >
+            <div style="animation-delay: 11s" class="reveal reveal-up">
               <h3 class="whitespace-nowrap font-light">2016-2017</h3>
             </div>
-            <div style="animation-delay: 13s;" class="reveal reveal-up">
+            <div style="animation-delay: 13s" class="reveal reveal-up">
               <h3 class="font-bold text-2xl">
                 CEPE
                 <p class="font-light text-xl uppercase">
@@ -98,47 +194,153 @@
           </div>
         </div>
 
-        <!-- colonne Grand titre : reste fixe -->
-        <div style="animation-delay: 0.8s;" class="bg-[#1B4332] text-[#D4A373] reveal reveal-right">
-         <div class="relative mt-[8.7rem]  ml-[-17vh]">
-           <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <path class="pulse" d="M 100 10 A 90 90 0 0 1 100 190 Z" fill="currentColor" opacity="0.08"/>
-<path class="pulse" d="M 100 40 A 60 60 0 0 1 100 160 Z" fill="currentColor" opacity="0.12" style="animation-delay: 0.3s"/>
-<path class="pulse" d="M 100 70 A 30 30 0 0 1 100 130 Z" fill="currentColor" opacity="0.18" style="animation-delay: 0.6s"/>
-</svg>
-         </div>
-        <div style="animation-delay: 10s;"
-          class="sticky top-0 h-screen self-start  flex items-start reveal reveal-up"
+        <!-- colonne Grand titre : reste fixe (sur mobile : bandeau en haut) -->
+        <div
+          style="animation-delay: 0.8s"
+          class="order-first md:order-0 bg-[#1B4332] text-[#D4A373] reveal reveal-right"
         >
-          <h3 class="pl-[50vh] pt-5 uppercase font-bold text-3xl">Formation</h3>
+          <div class="hidden md:block relative mt-[8.7rem] ml-[-17vh]">
+            <svg
+              width="200"
+              height="200"
+              viewBox="0 0 200 200"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="pulse"
+                d="M 100 10 A 90 90 0 0 1 100 190 Z"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <path
+                class="pulse"
+                d="M 100 40 A 60 60 0 0 1 100 160 Z"
+                fill="currentColor"
+                opacity="0.12"
+                style="animation-delay: 0.3s"
+              />
+              <path
+                class="pulse"
+                d="M 100 70 A 30 30 0 0 1 100 130 Z"
+                fill="currentColor"
+                opacity="0.18"
+                style="animation-delay: 0.6s"
+              />
+            </svg>
+          </div>
+          <div
+            style="animation-delay: 10s"
+            class="md:sticky md:top-0 md:h-screen md:self-start flex items-start justify-center md:justify-start py-8 md:py-0 reveal reveal-up"
+          >
+            <h3
+              class="text-center md:text-left md:pl-[50vh] md:pt-5 uppercase font-bold text-3xl"
+            >
+              Formation
+            </h3>
+          </div>
+          <div class="hidden md:block relative ml-96">
+            <svg
+              width="200"
+              height="200"
+              viewBox="0 0 200 200"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                class="pulse"
+                cx="100"
+                cy="100"
+                r="90"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <circle
+                class="pulse"
+                cx="100"
+                cy="100"
+                r="60"
+                fill="currentColor"
+                opacity="0.12"
+                style="animation-delay: 0.4s"
+              />
+              <circle
+                class="pulse"
+                cx="100"
+                cy="100"
+                r="30"
+                fill="currentColor"
+                opacity="0.18"
+                style="animation-delay: 0.8s"
+              />
+            </svg>
+          </div>
         </div>
-       <div class="relative ml-96"> <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <circle class="pulse" cx="100" cy="100" r="90" fill="currentColor" opacity="0.08"/>
-<circle class="pulse" cx="100" cy="100" r="60" fill="currentColor" opacity="0.12" style="animation-delay: 0.4s"/>
-<circle class="pulse" cx="100" cy="100" r="30" fill="currentColor" opacity="0.18" style="animation-delay: 0.8s"/>
-</svg></div>
       </div>
-    </section></div>
+    </section>
 
     <!-- SECTION COMPÉTENCE : "Compétence" reste fixe à gauche, droite défile -->
-    <section class="relative">
+    <section class="relative overflow-x-clip md:overflow-x-visible">
       <div class="grid md:grid-cols-2 gap-5">
         <!-- colonne titre "Compétence" : reste fixe -->
-        <div style="animation-delay: 11s;" class="sticky top-0 h-screen self-start p-10 bg-[#1B4332] text-[#D4A373] border-t reveal reveal-left ">
-          <h3 class="whitespace-nowrap font-bold text-3xl uppercase">
+        <div
+          style="animation-delay: 11s"
+          class="md:sticky md:top-0 md:h-screen md:self-start p-6 md:p-10 bg-[#1B4332] text-[#D4A373] border-t reveal reveal-left"
+        >
+          <h3
+            class="whitespace-nowrap font-bold text-3xl uppercase text-center md:text-left"
+          >
             Compétence
           </h3>
-           <div style="animation: delay 20s ;" class="relative mt-20 ml-32 reveal reveal-right"> <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <circle class="pulse" cx="100" cy="100" r="90" fill="currentColor" opacity="0.08"/>
-<circle class="pulse" cx="100" cy="100" r="60" fill="currentColor" opacity="0.12" style="animation-delay: 0.4s"/>
-<circle class="pulse" cx="100" cy="100" r="30" fill="currentColor" opacity="0.18" style="animation-delay: 0.8s"/>
-</svg></div>
+          <div
+            style="animation: delay 20s"
+            class="hidden md:block relative mt-20 ml-32 reveal reveal-right"
+          >
+            <svg
+              width="200"
+              height="200"
+              viewBox="0 0 200 200"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                class="pulse"
+                cx="100"
+                cy="100"
+                r="90"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <circle
+                class="pulse"
+                cx="100"
+                cy="100"
+                r="60"
+                fill="currentColor"
+                opacity="0.12"
+                style="animation-delay: 0.4s"
+              />
+              <circle
+                class="pulse"
+                cx="100"
+                cy="100"
+                r="30"
+                fill="currentColor"
+                opacity="0.18"
+                style="animation-delay: 0.8s"
+              />
+            </svg>
+          </div>
         </div>
 
         <!-- colonne contenu : défile -->
-        <div style="animation-delay: 12s;" class="bg-[#FAF3E0] pb-20 relative reveal reveal-right">
-          <h3 class="mt-10 pl-[30vh]">Réseaux Cisco & Cisco Packet Tracer</h3>
-          <ol class="pt-10 pl-20 list-disc leading-relaxed">
+        <div
+          style="animation-delay: 12s"
+          class="bg-[#FAF3E0] pb-20 relative reveal reveal-right"
+        >
+          <h3 class="mt-6 md:mt-10 pl-6 md:pl-[30vh]">
+            Réseaux Cisco & Cisco Packet Tracer
+          </h3>
+          <ol
+            class="pt-6 md:pt-10 pl-10 pr-6 md:pl-20 md:pr-0 list-disc leading-relaxed"
+          >
             <li>TCP/IP, IPv4/IPv6, subnetting</li>
             <li>VLAN, trunking 802.1Q, routage inter-VLAN</li>
             <li>Routage statique et OSPF</li>
@@ -146,8 +348,10 @@
             <li>EtherChannel, LACP/PAgP, HSRP</li>
             <li>Configuration et dépannage réseau sur Cisco IOS</li>
           </ol>
-          <h3 class="mt-28 pl-[30vh]">Cybersécurité</h3>
-          <ol class="pt-10 pl-20 list-disc leading-relaxed">
+          <h3 class="mt-12 md:mt-28 pl-6 md:pl-[30vh]">Cybersécurité</h3>
+          <ol
+            class="pt-6 md:pt-10 pl-10 pr-6 md:pl-20 md:pr-0 list-disc leading-relaxed"
+          >
             <li>Principes fondamentaux de la cybersécurité</li>
             <li>Sécurisation des équipements réseau</li>
             <li>DHCP Snooping</li>
@@ -155,88 +359,211 @@
             <li>Analyse du trafic réseau avec Wireshark</li>
             <li>Dynamic ARP Inspection (DAI)</li>
           </ol>
-          <div style="animation: delay 12s ;" class="relative text-[#1B4332] reveal reveal-up ml-72 "> <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
- <circle class="pulse" cx="100" cy="100" r="90" fill="currentColor" opacity="0.08"/>
-<circle class="pulse" cx="100" cy="100" r="60" fill="currentColor" opacity="0.12" style="animation-delay: 0.4s"/>
-<circle class="pulse" cx="100" cy="100" r="30" fill="currentColor" opacity="0.18" style="animation-delay: 0.8s"/>
-</svg></div>
-          <div style="animation-delay: 14s;" class="reveal reveal-up">
-          <h3 class=" pl-[30vh]">Développement web</h3>
-          <ol class="pt-10 pl-20 list-disc leading-relaxed">
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>Tailwind CSS</li>
-            <li>Responsive Design</li>
-            <li>Création de sites web vitrines</li>
-            <li>JavaScript — bases</li>
-          </ol></div>
-          <div style="animation-delay: 15s;" class="reveal reveal-up">
-          <h3 class="mt-28 pl-[30vh]">Analyse de données</h3>
-          <ol class="pt-10 pl-20 list-disc leading-relaxed">
-            <li>Microsoft Excel</li>
-            <li>Nettoyage et organisation de données</li>
-            <li>Formules et fonctions Excel</li>
-            <li>Analyse de données — en cours d'apprentissage</li>
-          </ol></div>
+          <div
+            style="animation: delay 12s"
+            class="hidden md:block relative text-[#1B4332] reveal reveal-up ml-72"
+          >
+            <svg
+              width="200"
+              height="200"
+              viewBox="0 0 200 200"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                class="pulse"
+                cx="100"
+                cy="100"
+                r="90"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <circle
+                class="pulse"
+                cx="100"
+                cy="100"
+                r="60"
+                fill="currentColor"
+                opacity="0.12"
+                style="animation-delay: 0.4s"
+              />
+              <circle
+                class="pulse"
+                cx="100"
+                cy="100"
+                r="30"
+                fill="currentColor"
+                opacity="0.18"
+                style="animation-delay: 0.8s"
+              />
+            </svg>
+          </div>
+          <div
+            style="animation-delay: 14s"
+            class="mt-12 md:mt-0 reveal reveal-up"
+          >
+            <h3 class="pl-6 md:pl-[30vh]">Développement web</h3>
+            <ol
+              class="pt-6 md:pt-10 pl-10 pr-6 md:pl-20 md:pr-0 list-disc leading-relaxed"
+            >
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>Tailwind CSS</li>
+              <li>Responsive Design</li>
+              <li>Création de sites web vitrines</li>
+              <li>JavaScript — bases</li>
+            </ol>
+          </div>
+          <div style="animation-delay: 15s" class="reveal reveal-up">
+            <h3 class="mt-12 md:mt-28 pl-6 md:pl-[30vh]">Analyse de données</h3>
+            <ol
+              class="pt-6 md:pt-10 pl-10 pr-6 md:pl-20 md:pr-0 list-disc leading-relaxed"
+            >
+              <li>Microsoft Excel</li>
+              <li>Nettoyage et organisation de données</li>
+              <li>Formules et fonctions Excel</li>
+              <li>Analyse de données — en cours d'apprentissage</li>
+            </ol>
+          </div>
         </div>
-        
       </div>
-      
     </section>
-    <section class="relative">
-  <div class="grid md:grid-cols-2 gap-5">
 
-    <!-- colonne qui défile : liste des certifs -->
-    <div class="pb-20">
-       <div style="animation: delay 20s;" class="relative text-[#1B4332] reveal reveal-left "> <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <circle class="pulse" cx="100" cy="100" r="90" fill="currentColor" opacity="0.08"/>
-<circle class="pulse" cx="100" cy="100" r="60" fill="currentColor" opacity="0.12" style="animation-delay: 0.4s"/>
-<circle class="pulse" cx="100" cy="100" r="30" fill="currentColor" opacity="0.18" style="animation-delay: 0.8s"/>
-</svg></div>
-      <div style="animation-delay: 14s;" class="flex px-10 gap-16 items-center reveal reveal-left  ">
-        <div>
-          <h3 class="whitespace-nowrap font-light">2026</h3>
+    <!-- SECTION CERTIFICATIONS -->
+    <section class="relative overflow-x-clip md:overflow-x-visible">
+      <div class="grid md:grid-cols-2 gap-5">
+        <!-- colonne qui défile : liste des certifs -->
+        <div class="pb-20">
+          <div
+            style="animation: delay 20s"
+            class="hidden md:block relative text-[#1B4332] reveal reveal-left"
+          >
+            <svg
+              width="200"
+              height="200"
+              viewBox="0 0 200 200"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                class="pulse"
+                cx="100"
+                cy="100"
+                r="90"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <circle
+                class="pulse"
+                cx="100"
+                cy="100"
+                r="60"
+                fill="currentColor"
+                opacity="0.12"
+                style="animation-delay: 0.4s"
+              />
+              <circle
+                class="pulse"
+                cx="100"
+                cy="100"
+                r="30"
+                fill="currentColor"
+                opacity="0.18"
+                style="animation-delay: 0.8s"
+              />
+            </svg>
+          </div>
+          <div
+            style="animation-delay: 14s"
+            class="flex flex-col items-start gap-4 px-6 pt-8 md:flex-row md:items-center md:gap-16 md:px-10 md:pt-0 reveal reveal-left"
+          >
+            <div>
+              <h3 class="whitespace-nowrap font-light">2026</h3>
+            </div>
+            <div>
+              <h3 class="font-bold text-2xl">
+                CCNA — Introduction to Networks
+                <p class="font-light text-xl uppercase">
+                  Cisco Networking Academy
+                </p>
+              </h3>
+            </div>
+            <h3 class="font-bold text-2xl">
+              Excel Fundamentals for Data Analysis
+              <p class="font-light text-xl uppercase">Macquarie University</p>
+              <p class="font-light text-sm italic normal-case">via Coursera</p>
+            </h3>
+          </div>
         </div>
-        <div>
-          <h3 class="font-bold text-2xl">
-            CCNA — Introduction to Networks
-            <p class="font-light text-xl uppercase">Cisco Networking Academy</p>
-          </h3>
-        </div>
-        <h3 class="font-bold text-2xl">
-  Excel Fundamentals for Data Analysis
-  <p class="font-light text-xl uppercase">Macquarie University</p>
-  <p class="font-light text-sm italic normal-case">via Coursera</p>
-</h3>
-      </div>
-    </div>
 
-    <!-- colonne titre : reste fixe -->
-    <div style="animation: delay 15s" class="sticky bg-[#1B4332] text-[#D4A373] top-0 h-screen self-start flex items-start p-10 border-t reveal reveal-up">
-      <h3 class="whitespace-nowrap font-bold text-3xl uppercase">Certifications</h3>
-       <div style="animation: delay 20s" class="relative ml-36 mt-80 reveal reveal-right  "> <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <circle class="pulse" cx="100" cy="100" r="90" fill="currentColor" opacity="0.08"/>
-<circle class="pulse" cx="100" cy="100" r="60" fill="currentColor" opacity="0.12" style="animation-delay: 0.4s"/>
-<circle class="pulse" cx="100" cy="100" r="30" fill="currentColor" opacity="0.18" style="animation-delay: 0.8s"/>
-</svg></div>
-       </div>
- 
-  </div>
-</section>
-<!-- Téléchargement du CV -->
-      <section style="animation: delay 15s" class="mx-auto mt-10 flex max-w-6xl flex-col items-center gap-4 text-center reveal reveal-up">
-        <p class="text-xl font-medium">Tu préfères tout avoir sous la main ?</p>
-        <a
-          href="./assets/CV/CV_Koffi_Karl_Portfolio.pdf"
-          download="CV-Koffi-Kouame-Karl-Emery.pdf"
-          class="rounded-full bg-[#1B4332] px-8 py-3 font-semibold text-[#FAF3E0] duration-300 hover:bg-[#D4A373] hover:text-[#1B4332] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1B4332]"
+        <!-- colonne titre : reste fixe (sur mobile : bandeau au-dessus de la liste) -->
+        <div
+          style="animation: delay 15s"
+          class="order-first md:order-0 md:sticky bg-[#1B4332] text-[#D4A373] top-0 md:h-screen self-start flex items-start justify-center md:justify-start p-6 md:p-10 border-t reveal reveal-up"
         >
-          Télécharger mon CV (PDF)
-        </a>
-      </section>
-<!-- ---- bas de page ----  -->
-    <footer style="animation-delay: 0.8s"
-      class="mt-22 border-t border-[#D4A373]/40 px-6 py-10 md:px-10 reveal reveal-up">
+          <h3 class="whitespace-nowrap font-bold text-3xl uppercase">
+            Certifications
+          </h3>
+          <div
+            style="animation: delay 20s"
+            class="hidden md:block relative ml-36 mt-80 reveal reveal-right"
+          >
+            <svg
+              width="200"
+              height="200"
+              viewBox="0 0 200 200"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                class="pulse"
+                cx="100"
+                cy="100"
+                r="90"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <circle
+                class="pulse"
+                cx="100"
+                cy="100"
+                r="60"
+                fill="currentColor"
+                opacity="0.12"
+                style="animation-delay: 0.4s"
+              />
+              <circle
+                class="pulse"
+                cx="100"
+                cy="100"
+                r="30"
+                fill="currentColor"
+                opacity="0.18"
+                style="animation-delay: 0.8s"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Téléchargement du CV -->
+    <section
+      style="animation: delay 15s"
+      class="mx-auto mt-10 flex max-w-6xl flex-col items-center gap-4 px-6 text-center reveal reveal-up"
+    >
+      <p class="text-xl font-medium">Tu préfères tout avoir sous la main ?</p>
+      <a
+        href="./assets/CV/CV_Koffi_Karl_Portfolio.pdf"
+        download="CV-Koffi-Kouame-Karl-Emery.pdf"
+        class="rounded-full bg-[#1B4332] px-8 py-3 font-semibold text-[#FAF3E0] duration-300 hover:bg-[#D4A373] hover:text-[#1B4332] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1B4332]"
+      >
+        Télécharger mon CV (PDF)
+      </a>
+    </section>
+
+    <!-- ---- bas de page ----  -->
+    <footer
+      style="animation-delay: 0.8s"
+      class="mt-22 border-t border-[#D4A373]/40 px-6 py-10 md:px-10 reveal reveal-up"
+    >
       <div
         class="mx-auto flex max-w-7xl flex-col gap-10 md:flex-row md:items-end md:justify-between"
       >
@@ -248,10 +575,14 @@
               >
             </li>
             <li>
-              <a class="hover:text-[#D4A373]" href="/mention_légale.html">Mentions légales</a>
+              <a class="hover:text-[#D4A373]" href="/mention_légale.html"
+                >Mentions légales</a
+              >
             </li>
             <li>
-              <a class="hover:text-[#D4A373]" href="/politique_cookies.html">Politique de cookies</a>
+              <a class="hover:text-[#D4A373]" href="/politique_cookies.html"
+                >Politique de cookies</a
+              >
             </li>
           </ul>
           <p class="mt-4">© 2026 par Karl Eméry</p>
@@ -269,7 +600,7 @@
           <div>
             <h2 class="text-xl font-bold">Email</h2>
             <a
-              class="text-lg font-light hover:text-[#D4A373]"
+              class="text-lg font-light hover:text-[#D4A373] break-all"
               href="mailto:karlemerykoffi@gmail.com"
               >karlemerykoffi@gmail.com</a
             >
@@ -312,6 +643,6 @@
         </div>
       </div>
     </footer>
-     <script src="/src/script.js"></script>
+    <script src="/src/script.js"></script>
   </body>
 </html>
