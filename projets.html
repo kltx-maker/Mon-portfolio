@@ -7,14 +7,55 @@
     <title>Projets</title>
   </head>
   <body class="bg-[#FAF3E0] text-[#2D2D2D]">
-    <header class="border-b bg-[#FAF3E0]">
-      <nav class="flex flex-2 flex-row p-10">
-        <a href="/index.html">
-          <h1 class="text-xl font-bold text-[#D4A373]">
+    <header class="relative z-50 border-b bg-[#FAF3E0]">
+      <nav
+        class="relative flex flex-row items-center justify-between p-5 md:flex-2 md:items-start md:p-10"
+      >
+        <a href="/index.html" class="relative z-50">
+          <h1
+            class="text-sm sm:text-base font-display md:text-xl font-bold text-[#D4A373]"
+          >
             KOFFI KOUAME KARL EMERY
           </h1></a
         >
-        <ul class="flex flex-4 flex-row justify-end font-medium gap-6">
+
+        <!-- bouton hamburger (mobile uniquement) -->
+        <button
+          id="menu-btn"
+          type="button"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          class="relative z-50 md:hidden p-2 text-[#D4A373] cursor-pointer"
+        >
+          <svg
+            id="icon-open"
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            viewBox="0 0 24 24"
+          >
+            <path d="M4 7h10M4 12h16M4 17h10" />
+          </svg>
+          <svg
+            id="icon-close"
+            class="w-7 h-7 hidden"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            viewBox="0 0 24 24"
+          >
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+
+        <!-- menu desktop (identique au code d'origine) -->
+        <ul
+          class="hidden font-display md:flex md:flex-row md:flex-4 md:justify-end md:gap-6 font-medium"
+        >
           <li class="hover:text-[#D4A373] duration-300">
             <a href="/index.html">À propos de moi</a>
           </li>
@@ -30,21 +71,50 @@
         </ul>
       </nav>
     </header>
-    <section style="animation-delay: 0.3s" class="min-h-full reveal reveal-up">
-      <h1 class="p-10 text-5xl font-bold uppercase">Projets</h1>
-      <div class="flex flex-col gap-16 p-32 text-[#D4A373]">
+
+    <!-- MENU MOBILE plein écran (en dehors du header pour couvrir tout l'écran) -->
+    <ul
+      id="mobile-menu"
+      class="md:hidden fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-[#FAF3E0] text-2xl font-medium opacity-0 invisible -translate-y-4 transition-all duration-500 ease-out"
+    >
+      <li class="hover:text-[#D4A373] duration-300">
+        <a href="/index.html">À propos de moi</a>
+      </li>
+      <li class="hover:text-[#D4A373] duration-300">
+        <a href="/cv.html">CV</a>
+      </li>
+      <li class="hover:text-[#D4A373] duration-300 underline">
+        <a href="./projets.html">Projets</a>
+      </li>
+      <li class="hover:text-[#D4A373] duration-300">
+        <a href="/contact.html">Contact</a>
+      </li>
+    </ul>
+
+    <section
+      style="animation-delay: 0.3s"
+      class="min-h-full overflow-x-clip md:overflow-x-visible reveal reveal-up"
+    >
+      <h1
+        class="p-6 md:p-10 text-4xl font-display md:text-5xl font-bold uppercase"
+      >
+        Projets
+      </h1>
+      <div class="flex flex-col gap-10 md:gap-16 p-4 md:p-32 text-[#D4A373]">
         <div
           style="animation-delay: 0.8s"
-          class="grid grid-cols-2 gap-10 items-center justify-items-center p-10 relative bg-[#1B4332] rounded-2xl reveal reveal-up"
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center justify-items-center p-6 md:p-10 relative bg-[#1B4332] rounded-2xl reveal reveal-up"
         >
           <div>
-            <h3 class="text-3xl font-semibold pb-3 text-[#FAF3E0]">
+            <h3
+              class="text-2xl md:text-3xl font-semibold font-display pb-3 text-[#FAF3E0]"
+            >
               Formation en architecture réseau
             </h3>
             <h4 class="font-semibold text-xl pb-2">
               Formation pratique avec Cisco Packet Tracer
             </h4>
-            <p class="leading-relaxed text-xs pb-2">
+            <p class="leading-relaxed text-sm md:text-xs pb-2">
               Dans le cadre de ma formation en Réseaux et Sécurité Informatique,
               j’ai été responsable de la formation pratique en architecture
               réseau auprès d’étudiants de deuxième année. J’ai conçu et animé
@@ -63,7 +133,7 @@
               href="https://exemple.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="bg-[#D4A373] text-white px-4 py-3 rounded-lg inline-block mt-10 font-bold hover:opacity-70 duration-300"
+              class="bg-[#D4A373] text-white px-4 py-3 rounded-lg inline-block mt-6 md:mt-10 font-bold hover:opacity-70 duration-300"
             >
               <div class="flex flex-row gap-2">
                 <svg
@@ -95,14 +165,18 @@
         </div>
         <div
           style="animation-delay: 10s"
-          class="grid grid-cols-2 gap-10 items-center justify-items-center p-10 relative bg-[#1B4332] rounded-2xl reveal reveal-up"
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center justify-items-center p-6 md:p-10 relative bg-[#1B4332] rounded-2xl reveal reveal-up"
         >
           <div>
-            <h3 class="text-3xl font-semibold pb-3 text-[#FAF3E0]">REC LAB</h3>
+            <h3
+              class="text-2xl md:text-3xl font-semibold font-display pb-3 text-[#FAF3E0]"
+            >
+              REC LAB
+            </h3>
             <h4 class="font-semibold text-xl pb-2">
               Conception et développement d’un site web
             </h4>
-            <p class="leading-relaxed text-xs pb-2">
+            <p class="leading-relaxed text-sm md:text-xs pb-2">
               REC LAB est un projet web personnel réalisé afin de mettre en
               pratique mes compétences en développement front-end et en
               conception d’interfaces. J’ai travaillé sur la structure du site,
@@ -121,7 +195,7 @@
               href="https://exemple.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="bg-[#D4A373] text-white px-4 py-3 rounded-lg inline-block mt-10 font-bold hover:opacity-70 duration-300"
+              class="bg-[#D4A373] text-white px-4 py-3 rounded-lg inline-block mt-6 md:mt-10 font-bold hover:opacity-70 duration-300"
             >
               <div class="flex flex-row gap-2">
                 <svg
@@ -159,16 +233,16 @@
         </div>
         <div
           style="animation-delay: 12s"
-          class="grid grid-cols-2 gap-10 items-center justify-items-center p-10 relative bg-[#1B4332] rounded-2xl reveal reveal-up"
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 font-display md:gap-10 items-center justify-items-center p-6 md:p-10 relative bg-[#1B4332] rounded-2xl reveal reveal-up"
         >
           <div>
-            <h3 class="text-3xl font-semibold pb-3 text-[#FAF3E0]">
+            <h3 class="text-2xl md:text-3xl font-semibold pb-3 text-[#FAF3E0]">
               Production vidéo
             </h3>
             <h4 class="font-semibold text-xl pb-2">
               Création de contenus promotionnels et événementiels
             </h4>
-            <p class="leading-relaxed text-xs pb-2">
+            <p class="leading-relaxed text-sm md:text-xs pb-2">
               J’ai réalisé des contenus vidéo destinés à la communication
               digitale, notamment pour la promotion d’Elpton et dans le cadre du
               concours Miss Informatique Côte d’Ivoire. Ces réalisations m’ont
@@ -187,7 +261,7 @@
               href="https://exemple.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="bg-[#D4A373] text-white px-4 py-3 rounded-lg inline-block mt-10 font-bold hover:opacity-70 duration-300"
+              class="bg-[#D4A373] text-white px-4 py-3 rounded-lg inline-block mt-6 md:mt-10 font-bold hover:opacity-70 duration-300"
             >
               <div class="flex flex-row gap-2">
                 <svg
@@ -224,6 +298,7 @@
         </div>
       </div>
     </section>
+
     <footer
       style="animation-delay: 0.3s"
       class="border-t border-[#2D2D2D]/40 px-6 py-10 md:px-10 reveal reveal-up"
@@ -264,7 +339,7 @@
           <div>
             <h2 class="text-xl font-bold">Email</h2>
             <a
-              class="text-lg font-light hover:text-[#D4A373]"
+              class="text-lg font-light hover:text-[#D4A373] break-all"
               href="mailto:karlemerykoffi@gmail.com"
               >karlemerykoffi@gmail.com</a
             >

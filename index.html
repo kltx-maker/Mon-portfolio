@@ -7,14 +7,55 @@
     <title>MON PORTFOLIO</title>
   </head>
   <body class="bg-[#FAF3E0] text-[#2D2D2D]">
-    <header class="border-b bg-[#FAF3E0]">
-      <nav class="flex flex-2 flex-row p-10">
-        <a href="/index.html">
-          <h1 class="text-xl font-bold text-[#D4A373]">
+    <header class="relative z-50 border-b bg-[#FAF3E0]">
+      <nav
+        class="relative flex flex-row items-center justify-between p-5 md:flex-2 md:items-start md:p-10"
+      >
+        <a href="/index.html" class="relative z-50">
+          <h1
+            class="text-sm font-display sm:text-base md:text-xl font-bold text-[#D4A373]"
+          >
             KOFFI KOUAME KARL EMERY
           </h1></a
         >
-        <ul class="flex flex-4 flex-row justify-end font-medium gap-6">
+
+        <!-- bouton hamburger (mobile uniquement) -->
+        <button
+          id="menu-btn"
+          type="button"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          class="relative z-50 md:hidden p-2 text-[#D4A373] cursor-pointer"
+        >
+          <svg
+            id="icon-open"
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            viewBox="0 0 24 24"
+          >
+            <path d="M4 7h10M4 12h16M4 17h10" />
+          </svg>
+          <svg
+            id="icon-close"
+            class="w-7 h-7 hidden"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            viewBox="0 0 24 24"
+          >
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+
+        <ul
+          id="menu"
+          class="hidden font-display md:flex md:flex-row md:flex-4 md:justify-end md:gap-6 font-medium"
+        >
           <li class="hover:text-[#D4A373] duration-300 underline">
             <a href="/index.html">À propos de moi</a>
           </li>
@@ -30,19 +71,38 @@
         </ul>
       </nav>
     </header>
-    <section class="relative overflow-hidden reveal reveal-up">
-      <div class="grid md:grid-cols-2 min-h-160">
-        <!-- COLONNE GAUCHE : rectangle + carte qui déborde -->
-        <div class="relative">
-          <!-- le grand aplat de couleur en fond -->
 
+    <!-- MENU MOBILE plein écran (en dehors du header pour couvrir tout l'écran) -->
+    <ul
+      id="mobile-menu"
+      class="md:hidden fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-[#FAF3E0] text-2xl font-medium opacity-0 invisible -translate-y-4 transition-all duration-500 ease-out"
+    >
+      <li class="hover:text-[#D4A373] duration-300 underline">
+        <a href="/index.html">À propos de moi</a>
+      </li>
+      <li class="hover:text-[#D4A373] duration-300">
+        <a href="/cv.html">CV</a>
+      </li>
+      <li class="hover:text-[#D4A373] duration-300">
+        <a href="/projets.html">Projets</a>
+      </li>
+      <li class="hover:text-[#D4A373] duration-300">
+        <a href="/contact.html">Contact</a>
+      </li>
+    </ul>
+
+    <section class="relative md:overflow-hidden reveal reveal-up">
+      <div class="grid md:grid-cols-2 md:min-h-160">
+        <!-- COLONNE GAUCHE : rectangle + carte qui déborde -->
+        <div class="relative min-h-88 md:min-h-0">
+          <!-- le grand aplat de couleur en fond -->
           <div class="absolute inset-0 bg-[#1B4332]"></div>
 
-          <!-- la carte "profil", positionnée en absolu pour déborder
-             sur la colonne de droite (right négatif) -->
+          <!-- la carte "profil" : mobile = centrée à cheval sur les 2 colonnes,
+               desktop = comme avant (déborde à droite) -->
           <div
             style="animation-delay: 0.3s"
-            class="absolute bottom-10 -right-35 w-[320px] bg-[#FAF3E0] shadow-2xl px-10 py-12 text-center hidden md:block reveal reveal-up"
+            class="absolute left-0 right-0 mx-auto -bottom-40 w-[85%] max-w-[320px] bg-[#FAF3E0] shadow-2xl px-8 py-10 text-center reveal reveal-up md:left-auto md:mx-0 md:bottom-10 md:-right-35 md:w-[320px] md:max-w-none md:px-10 md:py-12"
           >
             <div
               class="mx-auto h-36 w-36 rounded-full overflow-hidden bg-gray-300 mb-6"
@@ -50,7 +110,9 @@
               <!-- image -->
               <img src="/assets/images/photo portfolio.jpg" alt="" />
             </div>
-            <h3 class="text-2xl font-bold leading-snug">Karl<br />Eméry</h3>
+            <h3 class="text-2xl font-bold font-display leading-snug">
+              Karl<br />Eméry
+            </h3>
             <div class="w-10 h-0.5 bg-[#D4A373] mx-auto my-4"></div>
             <p class="text-sm tracking-[0.25em]">
               Etudiant en réseau et sécurité informatique
@@ -90,37 +152,37 @@
           </div>
         </div>
 
-        <!-- COLONNE DROITE : le texte -->
+        <!-- COLONNE DROITE : le texte (sous la carte sur mobile) -->
         <div
-          class="flex flex-col justify-center text-center ml-32 px-10 md:px-16 py-16 md:py-0"
+          class="flex flex-col justify-center text-center md:ml-32 px-6 md:px-16 pt-48 pb-12 md:py-0"
         >
           <h1
-            class="text-6xl md:text-8xl font-extrabold text-[#D4A373] leading-none"
+            class="text-6xl md:text-8xl font-extrabold font-display text-[#D4A373] leading-none"
           >
             SALUT
           </h1>
-          <p class="text-xl ml-7 text-[#1B4332] mt-6">
+          <p class="text-xl md:ml-7 text-[#1B4332] mt-6">
             Qui je suis et ce que je fais
           </p>
 
           <div class="flex gap-3 mt-8 justify-center">
             <a href="./cv.html">
               <button
-                class="bg-[#D4A373] cursor-pointer hover:bg-[#1B4332] text-white text-sm font-semibold tracking-wide px-8 py-3 rounded-full duration-300 hover:-translate-x-4 transition"
+                class="bg-[#D4A373] cursor-pointer font-display hover:bg-[#1B4332] text-white text-sm font-semibold tracking-wide px-8 py-3 rounded-full duration-300 hover:-translate-x-4 transition"
               >
                 CV
               </button></a
             >
             <a href="#">
               <button
-                class="border border-[#D4A373] cursor-pointer text-sm font-semibold tracking-wide px-8 py-3 rounded-full hover:bg-[#1B4332] hover:text-white duration-300 hover:translate-x-4 transition"
+                class="border border-[#D4A373] font-display cursor-pointer text-sm font-semibold tracking-wide px-8 py-3 rounded-full hover:bg-[#1B4332] hover:text-white duration-300 hover:translate-x-4 transition"
               >
                 PROJETS
               </button></a
             >
           </div>
 
-          <p class="mt-10 max-w-md leading-relaxed">
+          <p class="mt-10 max-w-md mx-auto md:mx-0 leading-relaxed">
             Je me nomme
             <span class="font-bold">KOFFI KOUAME KARL EMERY</span>,
             <span class="text-[#D4A373]">co-fondateur</span> d’<span
@@ -181,7 +243,7 @@
           <div>
             <h2 class="text-xl font-bold">Email</h2>
             <a
-              class="text-lg font-light hover:text-[#D4A373]"
+              class="text-lg font-light hover:text-[#D4A373] break-all"
               href="mailto:karlemerykoffi@gmail.com"
               >karlemerykoffi@gmail.com</a
             >
