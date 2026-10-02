@@ -7,12 +7,16 @@
     <title>CV</title>
   </head>
   <body class="bg-[#FAF3E0] text-[#2D2D2D]">
-    <header class="relative z-50 border-b bg-[#FAF3E0] border-[#2D2D2D]">
+    <header
+      class="sticky top-0 z-50 h-21 md:h-28 border-b bg-[#FAF3E0] border-[#2D2D2D]"
+    >
       <nav
-        class="relative flex flex-row items-center justify-between p-5 md:flex-2 md:items-start md:p-10"
+        class="h-full relative flex flex-row items-center justify-between p-5 md:flex-2 md:items-start md:p-10"
       >
         <a href="/index.html" class="relative z-50">
-          <h1 class="text-sm sm:text-base md:text-xl font-bold text-[#D4A373]">
+          <h1
+            class="text-sm font-display sm:text-base md:text-xl font-bold text-[#D4A373]"
+          >
             KOFFI KOUAME KARL EMERY
           </h1></a
         >
@@ -52,7 +56,7 @@
 
         <!-- menu desktop (identique au code d'origine) -->
         <ul
-          class="hidden md:flex md:flex-row md:flex-4 md:justify-end md:gap-6 font-medium"
+          class="hidden font-display md:flex md:flex-row md:flex-4 md:justify-end md:gap-6 font-medium"
         >
           <li class="hover:text-[#D4A373] duration-300">
             <a href="/index.html">À propos de moi</a>
@@ -96,7 +100,9 @@
       <div class="grid md:grid-cols-2 gap-5">
         <!-- COLONNE CV : défile -->
         <div style="animation-delay: 0.6s" class="pb-2 reveal reveal-left">
-          <h2 class="p-6 md:p-10 text-5xl md:text-6xl font-bold">CV</h2>
+          <h2 class="p-6 md:p-10 text-5xl md:text-6xl font-display font-bold">
+            CV
+          </h2>
           <div
             style="animation: delay 20s"
             class="hidden md:block relative text-[#1B4332] ml-[92vh] reveal reveal-left"
@@ -230,10 +236,10 @@
           </div>
           <div
             style="animation-delay: 10s"
-            class="md:sticky md:top-0 md:h-screen md:self-start flex items-start justify-center md:justify-start py-8 md:py-0 reveal reveal-up"
+            class="md:sticky md:top-28 md:h-[calc(100vh-7rem)] md:self-start flex items-start justify-center md:justify-start py-8 md:py-0 reveal reveal-up"
           >
             <h3
-              class="text-center md:text-left md:pl-[50vh] md:pt-5 uppercase font-bold text-3xl"
+              class="text-center md:text-left font-display md:pl-[50vh] md:pt-5 uppercase font-bold text-3xl"
             >
               Formation
             </h3>
@@ -283,10 +289,10 @@
         <!-- colonne titre "Compétence" : reste fixe -->
         <div
           style="animation-delay: 11s"
-          class="md:sticky md:top-0 md:h-screen md:self-start p-6 md:p-10 bg-[#1B4332] text-[#D4A373] border-t reveal reveal-left"
+          class="md:sticky md:top-28 md:h-[calc(100vh-7rem)] md:self-start p-6 md:p-10 bg-[#1B4332] text-[#D4A373] border-t reveal reveal-left"
         >
           <h3
-            class="whitespace-nowrap font-bold text-3xl uppercase text-center md:text-left"
+            class="whitespace-nowrap font-bold font-display text-3xl uppercase text-center md:text-left"
           >
             Compétence
           </h3>
@@ -335,7 +341,7 @@
           style="animation-delay: 12s"
           class="bg-[#FAF3E0] pb-20 relative reveal reveal-right"
         >
-          <h3 class="mt-6 md:mt-10 pl-6 md:pl-[30vh]">
+          <h3 class="mt-6 md:mt-10 pl-6 md:pl-[30vh] font-display">
             Réseaux Cisco & Cisco Packet Tracer
           </h3>
           <ol
@@ -348,7 +354,9 @@
             <li>EtherChannel, LACP/PAgP, HSRP</li>
             <li>Configuration et dépannage réseau sur Cisco IOS</li>
           </ol>
-          <h3 class="mt-12 md:mt-28 pl-6 md:pl-[30vh]">Cybersécurité</h3>
+          <h3 class="mt-12 md:mt-28 pl-6 md:pl-[30vh] font-display">
+            Cybersécurité
+          </h3>
           <ol
             class="pt-6 md:pt-10 pl-10 pr-6 md:pl-20 md:pr-0 list-disc leading-relaxed"
           >
@@ -401,7 +409,7 @@
             style="animation-delay: 14s"
             class="mt-12 md:mt-0 reveal reveal-up"
           >
-            <h3 class="pl-6 md:pl-[30vh]">Développement web</h3>
+            <h3 class="pl-6 md:pl-[30vh] font-display">Développement web</h3>
             <ol
               class="pt-6 md:pt-10 pl-10 pr-6 md:pl-20 md:pr-0 list-disc leading-relaxed"
             >
@@ -414,7 +422,9 @@
             </ol>
           </div>
           <div style="animation-delay: 15s" class="reveal reveal-up">
-            <h3 class="mt-12 md:mt-28 pl-6 md:pl-[30vh]">Analyse de données</h3>
+            <h3 class="mt-12 md:mt-28 pl-6 md:pl-[30vh] font-display">
+              Analyse de données
+            </h3>
             <ol
               class="pt-6 md:pt-10 pl-10 pr-6 md:pl-20 md:pr-0 list-disc leading-relaxed"
             >
@@ -497,9 +507,11 @@
         <!-- colonne titre : reste fixe (sur mobile : bandeau au-dessus de la liste) -->
         <div
           style="animation: delay 15s"
-          class="order-first md:order-0 md:sticky bg-[#1B4332] text-[#D4A373] top-0 md:h-screen self-start flex items-start justify-center md:justify-start p-6 md:p-10 border-t reveal reveal-up"
+          class="order-first md:order-0 md:sticky md:top-28 bg-[#1B4332] text-[#D4A373] md:h-[calc(100vh-7rem)] self-start flex items-start justify-center md:justify-start p-6 md:p-10 border-t reveal reveal-up"
         >
-          <h3 class="whitespace-nowrap font-bold text-3xl uppercase">
+          <h3
+            class="whitespace-nowrap font-bold text-3xl uppercase font-display"
+          >
             Certifications
           </h3>
           <div
