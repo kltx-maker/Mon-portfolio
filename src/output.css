@@ -2343,6 +2343,16 @@
   .focus-visible\:outline-\[\#FAF3E0\]:focus-visible {
     outline-color: #FAF3E0;
   }
+  .data-\[open\=true\]\:visible[data-open="true"] {
+    visibility: visible;
+  }
+  .data-\[open\=true\]\:translate-y-0[data-open="true"] {
+    --tw-translate-y: 0px;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .data-\[open\=true\]\:opacity-100[data-open="true"] {
+    opacity: 100%;
+  }
   @media (width >= 40rem) {
     .sm\:grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2401,6 +2411,9 @@
     .md\:mt-10 {
       margin-top: calc(var(--spacing) * 10);
     }
+    .md\:mt-16 {
+      margin-top: calc(var(--spacing) * 16);
+    }
     .md\:mt-28 {
       margin-top: calc(var(--spacing) * 28);
     }
@@ -2433,6 +2446,9 @@
     }
     .md\:w-\[320px\] {
       width: 320px;
+    }
+    .md\:w-auto {
+      width: auto;
     }
     .md\:max-w-none {
       max-width: none;
@@ -2483,6 +2499,9 @@
     .md\:gap-10 {
       gap: calc(var(--spacing) * 10);
     }
+    .md\:gap-12 {
+      gap: calc(var(--spacing) * 12);
+    }
     .md\:gap-16 {
       gap: calc(var(--spacing) * 16);
     }
@@ -2529,6 +2548,9 @@
     .md\:py-12 {
       padding-block: calc(var(--spacing) * 12);
     }
+    .md\:py-16 {
+      padding-block: calc(var(--spacing) * 16);
+    }
     .md\:pt-0 {
       padding-top: 0px;
     }
@@ -2559,6 +2581,10 @@
     .md\:text-3xl {
       font-size: var(--text-3xl);
       line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+    .md\:text-4xl {
+      font-size: var(--text-4xl);
+      line-height: var(--tw-leading, var(--text-4xl--line-height));
     }
     .md\:text-5xl {
       font-size: var(--text-5xl);
