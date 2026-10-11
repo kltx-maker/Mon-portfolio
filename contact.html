@@ -16,11 +16,15 @@
       content="default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; img-src 'self' data:; form-action https://formspree.io"
     />
     <link rel="stylesheet" href="./src/output.css" />
+    <script src="/src/boot.js"></script>
     <script src="/src/script.js" defer></script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <!-- menu hamburger : fichier externe car la CSP bloque les scripts inline -->
     <title>Contact</title>
   </head>
-  <body class="bg-[#FAF3E0] text-[#2D2D2D]">
+  <body class="bg-[#FAF3E0] text-[#2D2D2D]" data-page="contact">
     <header class="relative z-50 border-b bg-[#FAF3E0]">
       <nav
         class="relative flex flex-row items-center justify-between p-5 md:flex-2 md:items-start md:p-10"
@@ -322,5 +326,10 @@
         </div>
       </div>
     </footer>
+     <script defer src="/src/vendors/gsap.min.js"></script>
+<script defer src="/src/vendors/Scrolltrigger.min.js"></script>
+<script defer src="/src/vendors/Lenis.min.js"></script>
+<script defer src="/src/motion.js"></script>
   </body>
+ 
 </html>

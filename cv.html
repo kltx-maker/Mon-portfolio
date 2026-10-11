@@ -4,9 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/output.css" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <script>
+      try {
+        if (sessionStorage.getItem("arriving"))
+          document.documentElement.classList.add("is-arriving");
+      } catch (e) {}
+      // à ajouter dans le <script> du head de cv.html, après le try/catch
+      setTimeout(function () {
+        if (window.__motion) return;
+        var d = document.documentElement;
+        d.classList.remove("is-arriving");
+        var c = document.getElementById("curtain");
+        if (c) c.style.transform = "scaleY(0)";
+      }, 3000);
+    </script>
+    <style>
+      .is-arriving #curtain {
+        transform: scaleY(1) !important;
+      }
+    </style>
     <title>CV</title>
   </head>
-  <body class="bg-[#FAF3E0] text-[#2D2D2D]">
+  <body class="bg-[#FAF3E0] text-[#2D2D2D]" data-page="cv">
+    <div
+      id="curtain"
+      style="
+        position: fixed;
+        inset: 0;
+        z-index: 9998;
+        background: #1b4332;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        pointer-events: none;
+      "
+    ></div>
     <header
       class="sticky top-0 z-50 h-21 md:h-28 border-b bg-[#FAF3E0] border-[#2D2D2D]"
     >
@@ -105,7 +139,7 @@
           </h2>
           <div
             style="animation: delay 20s"
-            class="hidden md:block relative text-[#1B4332] ml-[92vh] reveal reveal-left"
+            class="hidden md:block relative text-[#1B4332] ml-[90vh] reveal reveal-left"
           >
             <svg
               width="200"
@@ -205,7 +239,7 @@
           style="animation-delay: 0.8s"
           class="order-first md:order-0 bg-[#1B4332] text-[#D4A373] reveal reveal-right"
         >
-          <div class="hidden md:block relative mt-[8.7rem] ml-[-17vh]">
+          <div class="hidden md:block relative mt-36 ml-[-17vh]">
             <svg
               width="200"
               height="200"
@@ -516,7 +550,7 @@
           </h3>
           <div
             style="animation: delay 20s"
-            class="hidden md:block relative ml-36 mt-80 reveal reveal-right"
+            class="hidden md:block relative ml-24 mt-80 reveal reveal-right"
           >
             <svg
               width="200"
@@ -661,6 +695,10 @@
         </div>
       </div>
     </footer>
-    <script src="/src/script.js"></script>
+    <script defer src="/src/vendors/gsap.min.js"></script>
+    <script defer src="/src/vendors/Scrolltrigger.min.js"></script>
+    <script defer src="/src/vendors/Lenis.min.js"></script>
+    <script defer src="/src/script.js"></script>
+    <script defer src="/src/motion.js"></script>
   </body>
 </html>
